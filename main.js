@@ -1,5 +1,3 @@
-
-userName = prompt(Введите Ваше имя?);
+userName = prompt("Введите ваше имя:");
 
 alert("Hello, " + userName + "! How are you?");
-
