@@ -1,5 +1,5 @@
 
-userName = prompt(What is your first name?);
+userName = prompt(Введите Ваше имя?);
 
 alert("Hello, " + userName + "! How are you?");
 
