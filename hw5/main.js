@@ -6,7 +6,7 @@ if (userAge === null) {
     if (userCity === null) {
         alert("Шкода, що Ви не захотіли ввести своє місто.");
     } else {
-        const favoriteSport = prompt("Введіть свій улюблений вид спорту:");
+        const favoriteSport = prompt("Введіть свій улюблений вид спорту (Футбол, Теніс чи Бокс):");
         if (favoriteSport === null) {
             alert("Шкода, що Ви не захотіли ввести свій улюблений вид спорту.");
         } else {
@@ -19,7 +19,7 @@ if (userAge === null) {
             } else if (userCity === "Лондон") {
                 message = "Ти живеш у столиці Великої Британії.";
             }
-            let resaltSport = `Введіть улюбленний вид спорту (Футбол, Теніс чи Бокс) ${favoriteSport}.`;
+            let resaltSport = `Це добрий спорт, так тримати  ${favoriteSport}.`;
             if (favoriteSport === "Футбол") {
                 resaltSport = "Круто! Хочеш стати як Андрій Шевченко.";
             } else if (favoriteSport === "Теніс") {
