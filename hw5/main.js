@@ -19,7 +19,7 @@ if (userAge === null) {
             } else if (userCity === "Лондон") {
                 message = "Ти живеш у столиці Великої Британії.";
             }
-            let resaltSport = `Це добрий спорт, так тримати  ${favoriteSport}.`;
+            let resaltSport = `Це добрий спорт, так тримати:  ${favoriteSport}.`;
             if (favoriteSport === "Футбол") {
                 resaltSport = "Круто! Хочеш стати як Андрій Шевченко.";
             } else if (favoriteSport === "Теніс") {
