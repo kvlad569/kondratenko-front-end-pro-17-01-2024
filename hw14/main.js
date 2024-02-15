@@ -33,7 +33,7 @@ class Person {
   const person1 = new Person("Руслан", 25);
   const person2 = new Person("Марія", 40);
   
-  const car1 = new Car("Tesla", "CorollaModel S", 2016, "ВС1234АВ", person1);
+  const car1 = new Car("Tesla", "Model S", 2016, "ВС1234АВ", person1);
   const car2 = new Car("Porshe", "Panamera", 2020, "ВС1111ВС", person2);
   
   car1.displayInfo();
