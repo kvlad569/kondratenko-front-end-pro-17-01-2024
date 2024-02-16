@@ -41,7 +41,7 @@ class Car {
   }
 }
 
-const person1 = new Person("Руслан", 25);
+const person1 = new Person("Руслан",25);
 const person2 = new Person("Марія", 40);
 
 const car1 = new Car("Tesla", "Model S", 2016, "ВС1234АВ");
