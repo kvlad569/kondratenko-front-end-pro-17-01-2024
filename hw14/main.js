@@ -1,41 +1,56 @@
 class Person {
-    constructor(name, age) {
-      this.name = name;
-      this.age = age;
-    }
-  
-    displayInfo() {
-      console.log(`Ім'я: ${this.name}, Вік: ${this.age}`);
-    }
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
   }
-  
-  class Car {
-    constructor(brand, model, year, licensePlate, owner) {
-      this.brand = brand;
-      this.model = model;
-      this.year = year;
-      this.licensePlate = licensePlate;
-      // Перевіряємо вік власника перед присвоєнням
+
+  displayInfo() {
+    console.log(`Ім'я: ${this.name}, Вік: ${this.age}`);
+  }
+}
+
+class Car {
+  constructor(brand, model, year, licensePlate) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    this.licensePlate = licensePlate;
+    this.owner = null; 
+  }
+
+  setOwner(owner) {
+    if (owner instanceof Person) {
       if (owner.age >= 18) {
         this.owner = owner;
+        console.log(`Власник "${owner.name}" успішно доданий.`);
       } else {
         console.log("Власник повинен бути старше 18 років!");
       }
-    }
-  
-    displayInfo() {
-      console.log(`Марка: ${this.brand}, Модель: ${this.model}, Рік: ${this.year}, Номерний знак: ${this.licensePlate}`);
-      console.log("Власник:");
-      this.owner.displayInfo();
+    } else {
+      console.log("Некоректний об'єкт власника.");
     }
   }
-  
-  const person1 = new Person("Руслан", 25);
-  const person2 = new Person("Марія", 40);
-  
-  const car1 = new Car("Tesla", "Model S", 2016, "ВС1234АВ", person1);
-  const car2 = new Car("Porshe", "Panamera", 2020, "ВС1111ВС", person2);
-  
-  car1.displayInfo();
-  console.log("")
-  car2.displayInfo();
+
+  displayInfo() {
+    console.log(`Марка: ${this.brand}, Модель: ${this.model}, Рік: ${this.year}, Номерний знак: ${this.licensePlate}`);
+    if (this.owner) {
+      console.log("Власник:");
+      this.owner.displayInfo();
+    } else {
+      console.log("Власник не вказаний.");
+    }
+  }
+}
+
+const person1 = new Person("Руслан", 25);
+const person2 = new Person("Марія", 40);
+
+const car1 = new Car("Tesla", "Model S", 2016, "ВС1234АВ");
+const car2 = new Car("Porshe", "Panamera", 2020, "ВС1111ВС");
+
+car1.setOwner(person1);
+car2.setOwner(person2);
+
+car1.displayInfo();
+console.log("");
+car2.displayInfo();
