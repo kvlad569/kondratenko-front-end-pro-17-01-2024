@@ -15,7 +15,6 @@ class Car {
     this.model = model;
     this.year = year;
     this.licensePlate = licensePlate;
-    this.owner = null; 
   }
 
   setOwner(owner) {
