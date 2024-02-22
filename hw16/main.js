@@ -4,12 +4,13 @@ class Student {
         this.lastName = lastName;
         this.birthYear = birthYear;
         this.grades = [];
-        this.attendance = [];
+        this.attendance = new Array(25).fill(null);
     }
 
     present() {
-        if (this.attendance.length < 25) {
-            this.attendance.push(true);
+        const index = this.attendance.indexOf(null);
+        if (index !== -1) {
+            this.attendance[index] = true;
             console.log(`${this.firstName} ${this.lastName} був присутній на занятті.`);
         } else {
             console.log("Масив відвідуваності вже заповнений");
@@ -17,8 +18,9 @@ class Student {
     }
 
     absent() {
-        if (this.attendance.length < 25) {
-            this.attendance.push(false);
+        const index = this.attendance.indexOf(null);
+        if (index !== -1) {
+            this.attendance[index] = false;
             console.log(`${this.firstName} ${this.lastName} був відсутній на занятті.`);
         } else {
             console.log("Масив відвідуваності вже заповнений");
@@ -82,3 +84,5 @@ console.log("")
 console.log(student1.summary());
 console.log(student2.summary());
 console.log(student3.summary());
+
+console.log(student1.attendance); // Проверка значений массива attendanc
