@@ -10,7 +10,10 @@ class Sales {
   
     static calculateAverage(array) {
       const numbers = array.filter(item => typeof item === 'number');
-      const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+      let sum = 0;
+      for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+      }
       return sum / numbers.length;
     }
   
@@ -27,11 +30,20 @@ class Sales {
     new Sales('Май', 30, 11, 22)
   ];
   
-  salesData.forEach(sales => {
-    sales.logSales();
-    const average = Sales.calculateAverage([sales.rollers, sales.chess, sales.balls]);
-    console.log(`Среднее арифметическое: ${average}`);
-  });
+  Sales.calculateAverageByMonth = function(salesArray) {
+    salesArray.forEach(sales => {
+      sales.logSales();
+      const { rollers, chess, balls } = sales;
+      const average = Sales.calculateAverage([rollers, chess, balls]);
+      console.log(`Среднее арифметическое: ${average}`);
+    });
+  };
   
-  const allMonthsAverage = Sales.calculateAverage(salesData.map(sales => [sales.rollers, sales.chess, sales.balls]).flat());
-  console.log(`Среднее арифметическое за все месяцы: ${allMonthsAverage}`);
+  Sales.calculateAverageForAllMonths = function(salesArray) {
+    const allNumbers = salesArray.flatMap(sales => [sales.rollers, sales.chess, sales.balls]);
+    const allMonthsAverage = Sales.calculateAverage(allNumbers);
+    console.log(`Среднее арифметическое за все месяцы: ${allMonthsAverage}`);
+  };
+  
+  Sales.calculateAverageByMonth(salesData);
+  Sales.calculateAverageForAllMonths(salesData);
