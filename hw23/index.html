@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>Vladyslav Kondratenko</title>
-    <script src="./main.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>З'явлення і зникнення div при фокусуванні на текстовому полі</title>
+<style>
+    #message {
+        display: none;
+        position: absolute;
+        background-color: #f0f0f0;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+</style>
 </head>
 <body>
+
+<input type="text" id="textField" placeholder="Натисніть для фокусування на полі">
+
+<div id="message">Див з'являється при фокусуванні на текстовому полі</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
