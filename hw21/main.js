@@ -1,9 +1,9 @@
-var table = document.getElementById("myTable");
-var count = 1;
-for (var i = 0; i < 10; i++) {
-  var row = table.insertRow();
-  for (var j = 0; j < 10; j++) {
-    var cell = row.insertCell();
+const table = document.getElementById("myTable");
+const count = 1;
+for (const i = 0; i < 10; i++) {
+  const row = table.insertRow();
+  for (const j = 0; j < 10; j++) {
+    const cell = row.insertCell();
     cell.innerHTML = count++;
   }
 }
