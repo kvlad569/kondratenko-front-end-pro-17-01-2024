@@ -1,11 +1,25 @@
-#notification {
-    position: fixed;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
+body, #customDiv {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#customDiv {
+    display: none;
+    padding: 5px;
+    max-width: 150px;
     background-color: #f0f0f0;
-    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    display: none;
-  }
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin-right: auto;
+}
+
+#textInput:focus + #customDiv {
+    display: block;
+}
+
+#textInput {
+    margin-left: 10px;
+}

@@ -1,10 +1,10 @@
-const inputField = document.getElementById('inputField');
-const notificationDiv = document.getElementById('notification');
+const textInput = document.getElementById('textInput');
+const customDiv = document.getElementById('customDiv');
 
-inputField.addEventListener('focus', () => {
-  notificationDiv.style.display = 'block';
+textInput.addEventListener('focus', () => {
+    customDiv.style.display = 'block';
 });
 
-inputField.addEventListener('blur', () => {
-  notificationDiv.style.display = 'none';
+textInput.addEventListener('blur', () => {
+    customDiv.style.display = 'none';
 });
