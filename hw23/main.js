@@ -1,14 +1,10 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-    const textField = document.getElementById('textField');
-    const messageDiv = document.getElementById('message');
+const inputField = document.getElementById('inputField');
+const notificationDiv = document.getElementById('notification');
 
-    // Показуємо div
-    textField.addEventListener('focus', function() {
-        messageDiv.style.display = 'block';
-    });
+inputField.addEventListener('focus', () => {
+  notificationDiv.style.display = 'block';
+});
 
-    // Ховаємо div
-    textField.addEventListener('blur', function() {
-        messageDiv.style.display = 'none';
-    });
+inputField.addEventListener('blur', () => {
+  notificationDiv.style.display = 'none';
 });
