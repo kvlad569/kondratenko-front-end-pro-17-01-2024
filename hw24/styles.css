@@ -1,0 +1,32 @@
+.slider-container {
+    position: relative;
+    max-width: 500px; 
+    margin: 0 auto;
+  }
+  
+  .slider-image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .prev-btn,
+  .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .prev-btn {
+    left: 0;
+  }
+  
+  .next-btn {
+    right: 0;
+  }
+  
