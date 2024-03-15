@@ -10,6 +10,6 @@ function generateList(array) {
     return html;
 }
 
-const array = [1, 2, 3, [1.1, 1.2, 1.3], 4];
+const array = [1, 2, 3, [1.1, 1.2, 1.3], 4[], 5];
 const outputDiv = document.getElementById('output');
 outputDiv.innerHTML = generateList(array);
