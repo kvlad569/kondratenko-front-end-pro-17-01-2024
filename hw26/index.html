@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет магазин</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu" id="menu">
+            <ul>
+                <li onclick="toggleSubcategories('perfume')">Парфюмерия</li>
+                <li onclick="toggleSubcategories('makeup')">Макіяж</li>
+                <li onclick="toggleSubcategories('hair')">Волосся</li>
+                <li onclick="toggleSubcategories('face')">Обличчя</li>
+            </ul>
+        </div>
+        <div class="subcategories" id="subcategories">
+            <ul id="perfumeSubcategories" style="display:none;">
+                <li onclick="showProducts('perfume', 'womenPerfume')">Жіноча парфумерія</li>
+                <li onclick="showProducts('perfume', 'menPerfume')">Чоловіча парфумерія</li>
+                <li onclick="showProducts('perfume', 'unisexPerfume')">Парфумерія унісекс</li>
+            </ul>
+            <ul id="makeupSubcategories" style="display:none;">
+                <li onclick="showProducts('makeup', 'brows')">Брови</li>
+                <li onclick="showProducts('makeup', 'lips')">Губи</li>
+                <li onclick="showProducts('makeup', 'eyes')">Очі</li>
+            </ul>
+            <ul id="hairSubcategories" style="display:none;">
+                <li onclick="showProducts('hair', 'styling')">Стайлінг</li>
+                <li onclick="showProducts('hair', 'dye')">Фарби</li>
+                <li onclick="showProducts('hair', 'shampoo')">Шампуні</li>
+            </ul>
+            <ul id="faceSubcategories" style="display:none;">
+                <li onclick="showProducts('face', 'faceCream')">Креми для обличчя</li>
+                <li onclick="showProducts('face', 'maskFace')">Маски для обличчя</li>
+                <li onclick="showProducts('face', 'facialSerum')">Сировотки для обличчя</li>
+            </ul>
+        </div>
+        <div class="products" id="products"></div>
+        <div class="product-info" id="product-info"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
