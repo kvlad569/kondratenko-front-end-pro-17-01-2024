@@ -11,7 +11,16 @@ function displayData() {
         const field = form.elements[i];
         if (field.type === "checkbox" || field.type === "radio") {
             if (field.checked) {
-                table += "<tr><td>" + field.labels[0].innerText + "</td><td>Так</td></tr>";
+                let fieldName = "";
+                let fieldValue = "";
+                if (field.name === "gender") {
+                    fieldName = "Стать";
+                    fieldValue = field.value === "male" ? "Чоловіча" : "Жіноча";
+                } else {
+                    fieldName = field.labels[0].innerText;
+                    fieldValue = field.value;
+                }
+                table += "<tr><td>" + fieldName + "</td><td>" + fieldValue + "</td></tr>";
             }
         } else {
             if (field.value.trim() !== "") {
@@ -22,6 +31,6 @@ function displayData() {
     
     table += "</table>";
     dataDisplay.innerHTML = table;
-    registrationTitle.style.display = "none"; 
-    form.style.display = "none"; 
+    registrationTitle.style.display = "none"; // Приховуємо заголовок реєстраційної форми
+    form.style.display = "none"; // Приховуємо форму після натискання на кнопку
 }
