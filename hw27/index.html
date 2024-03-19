@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Реєстраційна форма</title>
+<script src="main.js"></script>
+</head>
+<body>
+    <h2 id="registrationTitle">Реєстраційна форма</h2>
+<form id="registrationForm">
+    <label for="firstName">Ім'я:</label>
+    <input type="text" id="firstName" name="firstName" placeholder="Введіть ваше ім'я" required><br><br>
+
+    <label for="lastName">Прізвище:</label>
+    <input type="text" id="lastName" name="lastName" placeholder="Введіть ваше прізвище" required><br><br>
+
+    <label for="dob">Дата народження:</label>
+    <input type="text" id="dob" name="dob" placeholder="Введіть вашу дату народження" required><br><br>
+
+    <label>Стать:</label><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Чоловіча</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Жіноча</label><br><br>
+
+    <label for="city">Місто:</label>
+    <select id="city" name="city">
+        <option value="" disabled selected>Оберіть місто</option>
+        <option value="kyiv">Київ</option>
+        <option value="lviv">Львів</option>
+        <option value="kharkiv">Харків</option>
+        <option value="odesa">Одеса</option>
+    </select><br><br>
+
+    <label for="address">Адреса:</label><br>
+    <textarea id="address" name="address" placeholder="Введіть вашу адресу" rows="4" cols="50" required></textarea><br><br>
+
+    <label>Мови, якими володієте:</label><br>
+    <input type="checkbox" id="lang1" name="languages" value="ukrainian">
+    <label for="lang1">Українська мова</label><br>
+    <input type="checkbox" id="lang2" name="languages" value="russian">
+    <label for="lang2">Російська мова</label><br>
+    <input type="checkbox" id="lang3" name="languages" value="english">
+    <label for="lang3">Англійська мова</label><br><br>
+
+    <button type="button" onclick="displayData()"><strong>Зберегти</strong></button>
+</form>
+
+<div id="dataDisplay"></div>
+
+</body>
+</html>
