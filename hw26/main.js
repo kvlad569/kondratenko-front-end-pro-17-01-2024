@@ -19,7 +19,7 @@ function showProductInfo(name, image, description) {
         <h2>${name}</h2>
         <img src="${image}" alt="${name}">
         <p>${description}</p>
-        <button onclick="buyProduct()">Купить</button>
+        <button onclick="buyProduct()">Купити</button>
     `;
 }
 
@@ -36,12 +36,24 @@ function buyProduct() {
 }
 
 const products = {
-    womenPerfume: [{ name: 'Товар 1', image: 'product1.jpg', description: 'Описание товара 1' }],
     menPerfume: [
-        { name: 'Товар 4', image: 'product4.jpg', description: 'Описание товара 4' },
-        { name: 'Товар 5', image: 'product5.jpg', description: 'Описание товара 5' },
-        { name: 'Товар 6', image: 'product6.jpg', description: 'Описание товара 6' }
+        { name: 'Calvin Klein Euphoria Men', 
+        image: 'images/perfume/men perfume/tovar1/1.jpg', 
+        description: 'Сучасні і сильні чоловіки обирають екзотичну провокацію.' },
+
+        { name: 'Lacoste Essential', 
+        image: 'images/perfume/men perfume/tovar2/1.jpg', 
+        description: 'Тип аромату: деревинні, фужерні. Початкова нота: Бергамот, Виноград, Водяні ноти, Лимон, Листя томатів, Мандарин, Фрукти' },
+
+        { name: 'Giorgio Armani Acqua di Gio Profondo',
+         image: 'images/perfume/men perfume/tovar3/1.png', 
+         description: 'Якщо ваш обранець віддає перевагу фужерним ароматам, насиченими східно-деревними переливами' }
     ],
+
+    womenPerfume: [{ name: 'Товар 1', 
+    image: 'images/perfume/men perfume/tovar1/1.jpg', 
+    description: 'Описание товара 1' }],
+    
     unisexPerfume: [{ name: 'Товар 7', image: 'product7.jpg', description: 'Описание товара 7' }],
     brows: [{ name: 'Товар 10', image: 'product10.jpg', description: 'Описание товара 10' }],
     lips: [{ name: 'Товар 13', image: 'product13.jpg', description: 'Описание товара 13' }],
