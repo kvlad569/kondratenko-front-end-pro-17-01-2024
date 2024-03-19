@@ -31,6 +31,6 @@ function displayData() {
     
     table += "</table>";
     dataDisplay.innerHTML = table;
-    registrationTitle.style.display = "none"; // Приховуємо заголовок реєстраційної форми
-    form.style.display = "none"; // Приховуємо форму після натискання на кнопку
+    registrationTitle.style.display = "none"; 
+    form.style.display = "none"; 
 }
