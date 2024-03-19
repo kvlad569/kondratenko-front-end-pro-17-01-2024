@@ -1,36 +1,39 @@
 function displayData() {
-    const form = document.getElementById("registrationForm");
-    const dataDisplay = document.getElementById("dataDisplay");
-    const registrationTitle = document.getElementById("registrationTitle");
-
-    let table = "<h2>Дані, введені користувачем:</h2>";
-    table += "<table border='1'>";
-    table += "<tr><th>Поле</th><th>Значення</th></tr>";
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const dob = document.getElementById("dob").value;
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+    const city = document.getElementById("city").options[document.getElementById("city").selectedIndex].text;
+    const address = document.getElementById("address").value;
     
-    for (let i = 0; i < form.elements.length; i++) {
-        const field = form.elements[i];
-        if (field.type === "checkbox" || field.type === "radio") {
-            if (field.checked) {
-                let fieldName = "";
-                let fieldValue = "";
-                if (field.name === "gender") {
-                    fieldName = "Стать";
-                    fieldValue = field.value === "male" ? "Чоловіча" : "Жіноча";
-                } else {
-                    fieldName = field.labels[0].innerText;
-                    fieldValue = field.value;
-                }
-                table += "<tr><td>" + fieldName + "</td><td>" + fieldValue + "</td></tr>";
-            }
-        } else {
-            if (field.value.trim() !== "") {
-                table += "<tr><td>" + field.labels[0].innerText + "</td><td>" + field.value + "</td></tr>";
-            }
+    const languages = document.querySelectorAll('input[name="languages"]:checked');
+    const languagesArray = Array.from(languages).map(language => {
+        switch (language.value) {
+            case 'ukrainian':
+                return 'Українська';
+            case 'russian':
+                return 'Російська';
+            case 'english':
+                return 'Англійська';
+            default:
+                return '';
         }
-    }
-    
-    table += "</table>";
-    dataDisplay.innerHTML = table;
-    registrationTitle.style.display = "none"; 
-    form.style.display = "none"; 
+    });
+
+    const table = `
+        <table border='1'>
+            <tr><th>Поле</th><th>Значение</th></tr>
+            <tr><td>Ім'я</td><td>${firstName}</td></tr>
+            <tr><td>Прізвище</td><td>${lastName}</td></tr>
+            <tr><td>Дата народження</td><td>${dob}</td></tr>
+            <tr><td>Стать</td><td>${gender === 'male' ? 'Чоловіча' : 'Жіноча'}</td></tr>
+            <tr><td>Місто</td><td>${city}</td></tr>
+            <tr><td>Адреса</td><td>${address}</td></tr>
+            <tr><td>Мови, якими володієте</td><td>${languagesArray.join(', ')}</td></tr>
+        </table>
+    `;
+
+    document.getElementById("registrationForm").style.display = "none";
+    document.getElementById("registrationTitle").style.display = "none";
+    document.getElementById("dataDisplay").innerHTML = table;
 }
