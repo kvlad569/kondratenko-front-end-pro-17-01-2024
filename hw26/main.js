@@ -1,4 +1,3 @@
-
 function toggleSubcategories(category) {
     const subcategories = document.querySelectorAll('.subcategories ul');
     subcategories.forEach(subcategory => {
@@ -10,7 +9,13 @@ function toggleSubcategories(category) {
 function showProducts(category, subcategory) {
     const productsElement = document.getElementById('products');
     const productList = products[subcategory];
-    productsElement.innerHTML = '<ul>' + productList.map(product => `<li onclick="showProductInfo('${product.name}', '${product.image}', '${product.description}')">${product.name}</li>`).join('') + '</ul>';
+    productsElement.innerHTML = '<ul>' + productList.map(product => `<li data-product-name="${product.name}" data-product-image="${product.image}" data-product-description="${product.description}">${product.name}</li>`).join('') + '</ul>';
+
+    productsElement.querySelectorAll('li').forEach(item => {
+        item.addEventListener('click', function() {
+            showProductInfo(this.dataset.productName, this.dataset.productImage, this.dataset.productDescription);
+        });
+    });
 }
 
 function showProductInfo(name, image, description) {
@@ -19,8 +24,10 @@ function showProductInfo(name, image, description) {
         <h2>${name}</h2>
         <img src="${image}" alt="${name}">
         <p>${description}</p>
-        <button onclick="buyProduct()">Купити</button>
+        <button id="buyButton">Купити</button>
     `;
+
+    document.getElementById('buyButton').addEventListener('click', buyProduct);
 }
 
 function buyProduct() {
@@ -49,7 +56,6 @@ const products = {
          image: 'images/perfume/men perfume/tovar3/1.png', 
          description: 'Якщо ваш обранець віддає перевагу фужерним ароматам, насиченими східно-деревними переливами' }
     ],
-
     womenPerfume: [{ name: 'Товар 1', 
     image: 'images/perfume/men perfume/tovar1/1.jpg', 
     description: 'Описание товара 1' }],
@@ -65,4 +71,3 @@ const products = {
     maskFace: [{ name: 'Товар 31', image: 'product31.jpg', description: 'Описание товара 31' }],
     facialSerum: [{ name: 'Товар 34', image: 'product34.jpg', description: 'Описание товара 34' }]
 };
-
