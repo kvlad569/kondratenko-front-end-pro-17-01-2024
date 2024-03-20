@@ -10,13 +10,13 @@
     <h2 id="registrationTitle">Реєстраційна форма</h2>
 <form id="registrationForm">
     <label for="firstName">Ім'я:</label>
-    <input type="text" id="firstName" name="firstName" placeholder="Введіть ваше ім'я" required><br><br>
+    <input type="text" id="firstName" data-field="firstName" placeholder="Введіть ваше ім'я" required><br><br>
 
     <label for="lastName">Прізвище:</label>
-    <input type="text" id="lastName" name="lastName" placeholder="Введіть ваше прізвище" required><br><br>
+    <input type="text" id="lastName" data-field="lastName" placeholder="Введіть ваше прізвище" required><br><br>
 
     <label for="dob">Дата народження:</label>
-    <input type="text" id="dob" name="dob" placeholder="Введіть вашу дату народження" required><br><br>
+    <input type="text" id="dob" data-field="dob" placeholder="Введіть вашу дату народження" required><br><br>
 
     <label>Стать:</label><br>
     <input type="radio" id="male" name="gender" value="male">
@@ -25,7 +25,7 @@
     <label for="female">Жіноча</label><br><br>
 
     <label for="city">Місто:</label>
-    <select id="city" name="city">
+    <select id="city" data-field="city" name="city">
         <option value="" disabled selected>Оберіть місто</option>
         <option value="kyiv">Київ</option>
         <option value="lviv">Львів</option>
@@ -34,7 +34,7 @@
     </select><br><br>
 
     <label for="address">Адреса:</label><br>
-    <textarea id="address" name="address" placeholder="Введіть вашу адресу" rows="4" cols="50" required></textarea><br><br>
+    <textarea id="address" data-field="address" name="address" placeholder="Введіть вашу адресу" rows="4" cols="50" required></textarea><br><br>
 
     <label>Мови, якими володієте:</label><br>
     <input type="checkbox" id="lang1" name="languages" value="ukrainian">

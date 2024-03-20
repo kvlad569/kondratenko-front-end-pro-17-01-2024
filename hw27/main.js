@@ -1,11 +1,18 @@
 function displayData() {
-    const firstName = document.getElementById("firstName").value;
-    const lastName = document.getElementById("lastName").value;
-    const dob = document.getElementById("dob").value;
-    const gender = document.querySelector('input[name="gender"]:checked').value;
-    const city = document.getElementById("city").options[document.getElementById("city").selectedIndex].text;
-    const address = document.getElementById("address").value;
-    
+    const fields = document.querySelectorAll('[data-field]');
+    let data = {};
+
+    fields.forEach(field => {
+        const fieldName = field.dataset.field;
+        data[fieldName] = field.value;
+    });
+
+    if (!Object.values(data).some(value => value !== '')) {
+        alert("Ви не ввели дані у реєстраційну форму. Будь ласка, заповніть хоча б одне поле.");
+        return;
+    }
+
+    const gender = document.querySelector('input[name="gender"]:checked');
     const languages = document.querySelectorAll('input[name="languages"]:checked');
     const languagesArray = Array.from(languages).map(language => {
         switch (language.value) {
@@ -22,18 +29,13 @@ function displayData() {
 
     const table = `
         <table border='1'>
-            <tr><th>Поле</th><th>Значение</th></tr>
-            <tr><td>Ім'я</td><td>${firstName}</td></tr>
-            <tr><td>Прізвище</td><td>${lastName}</td></tr>
-            <tr><td>Дата народження</td><td>${dob}</td></tr>
-            <tr><td>Стать</td><td>${gender === 'male' ? 'Чоловіча' : 'Жіноча'}</td></tr>
-            <tr><td>Місто</td><td>${city}</td></tr>
-            <tr><td>Адреса</td><td>${address}</td></tr>
+            <tr><th>Поле</th><th>Значення</th></tr>
+            ${Object.entries(data).map(([key, value]) => `<tr><td>${key}</td><td>${value}</td></tr>`).join('')}
+            <tr><td>Стать</td><td>${gender ? (gender.value === 'male' ? 'Чоловіча' : 'Жіноча') : ''}</td></tr>
             <tr><td>Мови, якими володієте</td><td>${languagesArray.join(', ')}</td></tr>
         </table>
     `;
 
     document.getElementById("registrationForm").style.display = "none";
-    document.getElementById("registrationTitle").style.display = "none";
     document.getElementById("dataDisplay").innerHTML = table;
 }
